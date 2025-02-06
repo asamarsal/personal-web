@@ -1,3 +1,3 @@
 # personal-web
 Personal web for dumbways.id bootcamp
-https://dumbways.id/assets/images/brandwhite.png
+<img align='center' src='https://dumbways.id/assets/images/brandwhite.png' width='900"'>

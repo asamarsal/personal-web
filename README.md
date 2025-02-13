@@ -7,11 +7,9 @@ https://personal-web-asamarsal.vercel.app/
 <img align='center' src='https://dumbways.id/assets/images/brandwhite.png' width='200"'>
 
 <details>
-    <summary<h2>Day 2</h2></summary>
+    <summary><h2>Day 2</h2></summary>
     <img src = "https://github.com/asamarsal/personal-web/blob/main/assets/img/screenshot/day2.PNG"/>
 </details>
-
-<br>
 
 <details>
     <summary><h2>Day 3</h2></summary>

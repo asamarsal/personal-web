@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/iconweb.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pertemuan 2</title>
+</head>
+
+<body>
+    <ul>
+        <div class="left-menu">
+            <li>
+                <a class="logo-dumbways" href="#home">
+                    <img src="img/dumbwayslogo.png" alt="logo-dumbways" width="50px">
+                </a>
+            </li>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a class="my-project" href="#myproject">My Project</a>
+            </li>
+        </div>
+        <div class="right-menu">
+            <li class="contact-me">
+                <a class="active" href="https://google.com" target="_blank">Contact Me</a>
+            </li>
+        </div>
+    </ul>
+    <h1 class="title">Get in touch</h1>
+        <form class="form-input" onsubmit="submitForm(event)">
+            <div class="container">
+                <div class="form-name">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-email">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email">
+                </div>
+                <div class="form-phonenumber">
+                    <label for="phonenumber">Phone Number</label>
+                    <input type="number" id="phonenumber" name="phonenumber">
+                </div>
+                <div class="form-subject">
+                    <label for="subject">Subject</label>
+                    <select id="subject">
+                        <option value="" disabled selected>Choose one subject...</option>
+                        <option value="subject-1">Keluhan</option>
+                        <option value="subject-2">Saran dan Masukan</option>
+                    </select>
+                </div>
+                <div class="form-yourmessage">
+                    <label for="yourmessage">Your Message</label>
+                    <textarea id="yourmessage" name="yourmessage"></textarea>
+                </div>
+                <div class="button-submit">
+                    <button type="submit" class="button-submit">Submit</button>
+                </div>
+            </div>
+        </form>
+
+    <script src="js/contactform.js" ></script>
+</body>

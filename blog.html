@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Personal Web</title>
     <link rel="icon" href="assets/img/icon.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- NAVBAR -->
+
     <nav>
       <ul class="navbar-links">
         <img src="assets/img/dumbwayslogo.png" width="40px" />
@@ -17,30 +19,29 @@
           <a href="blog.html" class="menu-active">Blog</a>
         </li>
       </ul>
-      <a class="nav-contact-button" href="contact.html">Contact Me</a>
+      <a class="nav-contact-button active" href="contact.html">Contact Me</a>
     </nav>
 
-    <!-- CREATE BLOG -->
     <form id="create-blog" class="create-blog-form" onsubmit="addBlog(event)">
       <h1>Create Blog</h1>
 
       <div class="form-field">
-        <label for="title">title</label>
+        <label for="title">Title</label>
         <input id="title" type="text" required />
       </div>
 
       <div class="form-field">
-        <label for="content">content</label>
+        <label for="content">Content</label>
         <textarea id="content" rows="6" required></textarea>
       </div>
 
       <div class="form-field">
-        <label for="image">upload image</label>
+        <label for="image">Upload Image</label>
         <input id="image" type="file" required />
       </div>
 
       <div class="button-container">
-        <button type="submit">Submit</button>
+        <button class="active" type="submit">Submit</button>
       </div>
     </form>
 
@@ -49,9 +50,7 @@
     <!-- BLOG LIST -->
     <section
       id="blogList"
-      class="blog-list"
-      style="background-color: darkgreen"
-    >
+      class="blog-list">
       <article class="blog-item">
         <div class="blog-item-img">
           <img src="assets/img/blog-img.png" alt="" />
@@ -62,18 +61,14 @@
             <button class="blog-post-button">Post Blog</button>
           </div>
           <a href="blog-detail.html" style="text-decoration: none">
-            <h1 class="blog-item-title">Pasar Coding di Indonesia</h1>
+            <h1 class="blog-item-title">Belajar bermain game online</h1>
           </a>
-          <p>30 Jan 2025 11:22 WIB | Alex Josua</p>
+          <p>1 Jan 2025 12:34 WIB | Ujang Spakbor</p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-            nostrum assumenda, voluptates maiores sequi quisquam pariatur
-            voluptatem non consequuntur dolor architecto, unde magni enim
-            itaque. Nostrum quod veniam quaerat modi ducimus accusamus dolorem,
-            repellat iusto, autem, ex in nesciunt eos mollitia quo numquam
-            deserunt pariatur aut fugiat id maiores enim.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repudiandae, dolorum.
           </p>
-          <p class="blog-item-relative-time">1 day ago</p>
+          <p class="blog-item-relative-time">5 days ago</p>
         </div>
       </article>
     </section>

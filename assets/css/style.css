@@ -1,13 +1,13 @@
 @media screen and (max-width: 768px) {
     .profile-card {
-        width: 85%;
+        width: 60%;
         max-width: 400px;
         margin: 15px auto;
         padding: 15px;
     }
 
     .contact-form {
-        width: 80%;
+        width: 60%;
         max-width: 400px;
         margin: 15px auto;
     }
@@ -15,7 +15,7 @@
     .form-field input,
     .form-field select,
     .form-field textarea {
-        width: 100%;
+        width: 60%;
         box-sizing: border-box;
     }
 

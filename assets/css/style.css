@@ -53,7 +53,8 @@ html {
   
 .profile-card {
     border-style: solid; 
-    width: 500px; 
+    /* width: 400px;  */
+    flex: 1;
     padding:10px; 
     margin: 30px auto; 
     box-shadow: 0 4px 8px rgba(0, 0, 2, 2);
@@ -78,9 +79,16 @@ body {
 }
 
 .title{
-    text-align: center;
     user-select: none;
     margin-top: 30px;
+}
+
+.title-getintouch{
+    user-select: none;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .table-profile{
@@ -203,7 +211,7 @@ nav a {
   
   .create-blog-form button {
     font-size: 16px;
-    font-family: "Poppins", serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: orangered;
     color: white;
     padding: 10px 25px;
@@ -235,6 +243,7 @@ nav a {
   
   .blog-item-img img {
     width: 350px;
+    height: 100%;
   }
   
   .blog-item-text {
@@ -253,7 +262,7 @@ nav a {
   
   .blog-edit-button {
     font-size: 16px;
-    font-family: "Poppins", serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #ccc;
     color: black;
     padding: 10px 25px;
@@ -264,7 +273,7 @@ nav a {
   
   .blog-post-button {
     font-size: 16px;
-    font-family: "Poppins", serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: orangered;
     color: white;
     padding: 10px 25px;
@@ -289,3 +298,25 @@ nav a {
     width: 100%;
   }
   
+  .menu-active{
+    color: #fe4e30 !important;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  /* Introduction */
+
+.main-content{
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+}
+
+#introduction{
+    flex: 2.5;
+}
+
+#technologies{
+    display: flex;
+    gap: 20px;
+}

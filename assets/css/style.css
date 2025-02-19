@@ -1,48 +1,49 @@
 @media screen and (max-width: 768px) {
     .profile-card {
-        width: 90%;
-        margin: 20px auto;
+        width: 85%;
+        max-width: 400px;
+        margin: 15px auto;
+        padding: 15px;
     }
 
     .contact-form {
-        width: 90%;
-        padding: 0 15px;
+        width: 85%;
+        max-width: 400px;
+        margin: 15px auto;
     }
 
-    nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 10px;
-    }
-
-    .navbar-links {
-        flex-direction: column;
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
         width: 100%;
-    }
-
-    .nav-contact-button {
-        width: 100%;
-        text-align: center;
+        box-sizing: border-box;
     }
 
     .table-profile {
-        font-size: 14px;
-    }
-
-    .form-field input, 
-    .form-field select, 
-    .form-field textarea {
         width: 100%;
+        font-size: 14px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    h1 {
-        font-size: 24px;
+    .profile-card {
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
     }
 
-    .profile-card {
-        padding: 8px;
+    .contact-form {
+        width: 90%;
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .profile-photo {
+        width: 100%;
+        height: auto;
     }
 }
 

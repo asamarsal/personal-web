@@ -10,7 +10,6 @@ https://personal-web-asamarsal.vercel.app/
     <summary><h2>Day 2</h2></summary>
     <img src = "https://github.com/asamarsal/personal-web/blob/main/assets/img/screenshot/day2.PNG"/>
 </details>
-
 <details>
     <summary><h2>Day 3</h2></summary>
     <img src = "https://github.com/asamarsal/personal-web/blob/main/assets/img/screenshot/day3.PNG"/>

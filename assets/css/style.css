@@ -16,6 +16,18 @@ body {
     margin: 0;
 }
 
+.active {
+    user-select: none;
+    border-radius: 10px;
+    transition: all 0.1s ease;
+    box-shadow: 0 0 5px #fe4e30;
+}
+
+.active:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px #fe4e30;
+}
+
 .title{
     text-align: center;
     user-select: none;
@@ -69,6 +81,7 @@ nav a {
     display: flex;
     align-items: center;
     height: 100%;
+    user-select: none;
 }
 
 .nav-contact-button{

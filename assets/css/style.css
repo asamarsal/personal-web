@@ -54,13 +54,87 @@
     }
 
     .form-field {
-        width: 60%;
+        width: 80%;
     }
 
     .form-field input,
     .form-field select,
     .form-field textarea {
-        width: 70%;
+        width: 80%;
+    }
+
+    .contact-form button {
+        margin-top: 20px;
+        margin-left: 30%;
+        display: block;
+    }
+
+    /* blog */
+    .create-blog-form {
+        width: 90%;
+    }
+
+    .blog-list {
+        width: 90%;
+    }
+
+    .blog-item {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .blog-item-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .blog-item-text {
+        padding: 15px 0;
+    }
+
+    .blog-item-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+
+    .blog-edit-button,
+    .blog-post-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    .create-blog-form {
+        width: 90%;
+    }
+
+    .blog-list {
+        width: 90%;
+    }
+
+    .blog-item {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .blog-item-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .blog-item-text {
+        padding: 15px 0;
+    }
+
+    .blog-item-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+
+    .blog-edit-button,
+    .blog-post-button {
+        padding: 8px 15px;
+        font-size: 14px;
     }
 }
 

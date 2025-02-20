@@ -1,7 +1,13 @@
 @media screen and (max-width: 768px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
     nav {
         flex-direction: column;
         padding: 10px;
+        width: 100%;
     }
 
     .navbar-links {
@@ -38,6 +44,23 @@
         flex-wrap: wrap;
         gap: 15px;
         margin-top: 20px;
+    }
+
+    .contact-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-field {
+        width: 60%;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        width: 100%;
     }
 }
 

@@ -10,17 +10,29 @@
   <body>
 
     <nav>
-      <ul class="navbar-links">
-        <img src="assets/img/dumbwayslogo.png" width="40px" />
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="blog.html" class="menu-active">Blog</a>
-        </li>
-      </ul>
-      <a class="nav-contact-button active" href="contact.html">Contact Me</a>
-    </nav>
+      <div class="main-menu">
+          <ul class="navbar-links">
+              <img src="assets/img/dumbwayslogo.png" alt="logo" class="logo" width="40px">
+              <li>
+                  <a href="index.html">Home</a>
+              </li>
+              <li>
+                  <a href="blog.html" class="menu-active">Blog</a>
+              </li>
+          </ul>
+          <a class="nav-contact-button active" href="contact.html">Contact Me</a>    
+      </div>
+
+      <div class="mobile-menu">
+          <img src="assets/img/dumbwayslogo.png" alt="logo" class="logo" width="40px">
+          <button id="hamburger-button" class="hamburger-button">≡</button>
+      </div>
+  </nav>
+  <div id="mobile-menu-list" class="mobile-menu-list mobile-menu-hide">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact Me</a>
+  </div>
 
     <form id="create-blog" class="create-blog-form" onsubmit="addBlog(event)">
       <h1>Create Blog</h1>
@@ -74,5 +86,6 @@
     </section>
 
     <script src="assets/js/blog.js"></script>
+    <script src="assets/js/navbar.js"></script>
   </body>
 </html>

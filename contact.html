@@ -11,17 +11,29 @@
 
     <body>
         <nav>
-            <ul class="navbar-links">
+            <div class="main-menu">
+                <ul class="navbar-links">
+                    <img src="assets/img/dumbwayslogo.png" alt="logo" class="logo" width="40px">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                </ul>
+                <a class="nav-contact-button active" href="contact.html">Contact Me</a>    
+            </div>
+
+            <div class="mobile-menu">
                 <img src="assets/img/dumbwayslogo.png" alt="logo" class="logo" width="40px">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="blog.html">Blog</a>
-                </li>
-            </ul>
-            <a class="nav-contact-button active" href="contact.html">Contact Me</a>
+                <button id="hamburger-button" class="hamburger-button">≡</button>
+            </div>
         </nav>
+        <div id="mobile-menu-list" class="mobile-menu-list mobile-menu-hide">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact Me</a>
+        </div>
 
         <h1 class="title-getintouch">Get in touch</h1>
 
@@ -55,5 +67,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="assets/js/contactform.js" ></script>
+        <script src="assets/js/navbar.js"></script>
     </body>
 </html>

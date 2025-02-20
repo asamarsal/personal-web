@@ -53,20 +53,22 @@
     }
 
     .contact-form {
-        width: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .form-field {
-        width: 80%;
+        width: 100%;
+        margin: auto;
     }
 
     .form-field input,
     .form-field select,
     .form-field textarea {
         width: 80%;
+        box-sizing: border-box;
     }
 
     .contact-form button {
@@ -78,63 +80,56 @@
     /* blog */
     .create-blog-form {
         width: 90%;
+        margin: 30px auto;
+        padding: 15px;
     }
 
     .blog-list {
-        width: 90%;
+        width: 100%;
     }
 
     .blog-item {
+        display: flex;
         flex-direction: column;
-        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .blog-item-img {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .blog-item-img img {
         width: 100%;
-        height: auto;
+        object-fit: cover;
     }
 
     .blog-item-text {
-        padding: 15px 0;
-    }
-
-    .blog-item-buttons {
-        display: flex;
-        gap: 10px;
-        justify-content: flex-end;
-    }
-
-    .blog-edit-button,
-    .blog-post-button {
-        padding: 8px 15px;
-        font-size: 14px;
-    }.create-blog-form {
-        width: 90%;
-    }
-
-    .blog-list {
-        width: 90%;
-    }
-
-    .blog-item {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .blog-item-img img {
         width: 100%;
-        height: auto;
+        padding: 15px;
+        box-sizing: border-box;
     }
 
-    .blog-item-text {
-        padding: 15px 0;
+    .blog-item-title {
+        font-size: 20px;
+        margin: 10px 0;
     }
 
     .blog-item-buttons {
+        margin-bottom: 10px;
+    }
+
+    .button-container {
         display: flex;
-        gap: 10px;
+        width: 90%;
         justify-content: flex-end;
     }
+    
+    .button-container button {
+        padding: 10px 25px;
+    }
+    
 
     .blog-edit-button,
     .blog-post-button {
@@ -204,6 +199,28 @@
         width: 100%;
         height: auto;
     }
+
+    .create-blog-form {
+        width: 90%;
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .form-field {
+        width: 90%;
+        margin: auto;
+    }
+
+    .form-field input,
+    .form-field textarea {
+        width: 90%;
+        box-sizing: border-box;
+    }
+
+    .blog-item-img{
+        width: 90%;
+    }
+
 }
 
 html {
@@ -367,7 +384,7 @@ nav a {
 /* CREATE BLOG FORM STYLES */
 
 .create-blog-form {
-    width: 500px;
+    width: 400px;
     margin: 30px auto;
   }
   
@@ -410,6 +427,7 @@ nav a {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
+    flex-direction: row;
   }
   
   .blog-item-img img {
@@ -468,6 +486,10 @@ nav a {
   .blog-detail img {
     width: 100%;
   }
+
+  .create-blog-form h1 {
+    text-align: center;
+ }
   
   .menu-active{
     color: #fe4e30 !important;
@@ -513,3 +535,10 @@ nav a {
 .mobile-menu-list a {
     display: none;
 }
+
+.createdby-asa{
+    text-align: center;
+    padding: 10px auto;
+    margin-top: 30px;
+}
+

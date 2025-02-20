@@ -3,7 +3,7 @@
         max-width: 100%;
         overflow-x: hidden;
     }
-    
+
     nav {
         flex-direction: column;
         padding: 10px;
@@ -60,7 +60,7 @@
     .form-field input,
     .form-field select,
     .form-field textarea {
-        width: 100%;
+        width: 70%;
     }
 }
 

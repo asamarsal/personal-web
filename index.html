@@ -48,7 +48,7 @@
 
                         <h1>Asa Marsal</h1>
 
-                        <p style="color: #000000;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nobis soluta non dolorem illo vel alias quidem quae voluptates architecto, adipisci consequatur eveniet eius similique deserunt assumenda quod modi reprehenderit.</p>
+                        <p style="color: #000000;">My name is Asa Marsal. A mobile developer especially for flutter and java for android. I have experience as Mobile Apps Developer and Front End Developer. I join dumbways bootcamp to switch career to fullstack web developer.</p>
 
                         <table class="table-profile">
                             <tr>
@@ -56,17 +56,32 @@
                                 <th style="border: 1px solid black; padding: 10px;">Year</th>
                             </tr>
                             <tr>
-                                <td style="border: 1px solid black; padding: 10px;">Develop Personal Web</td>
-                                <td style="border: 1px solid black; padding: 10px;">2025</td>
+                                <td style="border: 1px solid black; padding: 10px;">Front End Developer Intern</td>
+                                <td style="border: 1px solid black; padding: 10px;">2023</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black; padding: 10px;">Mobile Apps Developer (Java)</td>
+                                <td style="border: 1px solid black; padding: 10px;">2024</td>
                             </tr>
                         </table>
+
+                        <div class="downloadcv">
+                            <a class="downlad-cv" href="./assets/cv/cv.pdf">Download CV </p>
+                            <div class="icondownloadcv">
+                                <a href="./assets/cv/cv.pdf">
+                                    <img src="./assets/img/icon/btn_download.png" style="width: 30px;" target="_blank">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </section>
         
                 <!-- Introduction -->
                 <section class="introduction" id="introduction">
                     <div class="what-i-do">
-                        <h1 class="title">Introduction</h1>
+                        <h1 class="title">
+                            <span class="typing-text"></span>
+                        </h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nobis soluta non dolorem illo vel alias quidem quae voluptates architecto, adipisci consequatur eveniet eius similique deserunt assumenda quod modi reprehenderit.</p>
                     </div>
                     <div id="technologies">
@@ -83,25 +98,25 @@
                         <div id="javascript">
                             <img src="assets/img/icon/icon_docker.png" alt="docker" width="60px">
                             <h2 class="title">Automated Deployment</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nobis soluta non dolorem illo vel alias quidem quae voluptates architecto, adipisci consequatur eveniet</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nobis soluta non dolorem illo vel alias quidem quae voluptates architecto, adipisci</p>
                         </div>
                     </div>
                     <div>
                         <h2 class="title-socialmedia">Social Media</h2>
                         <div id="socialmediaicon">
-                            <a href="https://linkedin.com/in/asamarsal" target="_blank">
+                            <a id="socmed-1" href="https://linkedin.com/in/asamarsal" target="_blank">
                                 <img src="assets/img/icon/icon_linkedin.png" alt="linkedin" width="40px">
                             </a>
-                            <a href="https://medium.com/@asamarsal" target="_blank">
+                            <a id="socmed-2" href="https://medium.com/@asamarsal" target="_blank">
                                 <img src="assets/img/icon/icon_medium.png" alt="medium" width="40px">
                             </a>
-                            <a href="https://twitter.com/asamarsal" target="_blank">
+                            <a id="socmed-3" href="https://twitter.com/asamarsal" target="_blank">
                                 <img src="assets/img/icon/icon_twitter.png" alt="twitter" width="40px">
                             </a>
-                            <a href="https://www.instagram.com/asamarsal" target="_blank">
+                            <a id="socmed-4" href="https://www.instagram.com/asamarsal" target="_blank">
                                 <img src="assets/img/icon/icon_instagram.png" alt="instagram" width="40px">
                             </a>
-                            <a href="https://www.instagram.com/asamarsal" target="_blank">
+                            <a id="socmed-5" href="https://www.instagram.com/asamarsal" target="_blank">
                                 <img src="assets/img/icon/icon_youtube.png" alt="youtube" width="40px">
                             </a>
                         </div>
@@ -110,6 +125,16 @@
                 </section>
             </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
         <script src="assets/js/navbar.js"></script>
     </body>
 </html>
+
+<script>
+    let typed = new Typed(".typing-text", {
+        strings: ["Introduction"],
+        typeSpeed: 30,
+        backSpeed: 20,
+        loop: true
+    });
+</script>

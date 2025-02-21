@@ -521,6 +521,7 @@ nav a {
     display: flex;
     padding: 20px;
     gap: 30px;
+    user-select: none;
 }
 
 #introduction{
@@ -535,7 +536,9 @@ nav a {
 #socialmediaicon a{
     text-decoration: none;
     margin-right: 10px;
+    transition: transform 0.3s ease;
 }
+
 
 #hamburger-button {
     display: none;
@@ -558,3 +561,53 @@ nav a {
     display: none;
 }
 
+#profile-section {
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+#profile-section:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+#socmed-1 img:hover,
+#socmed-2 img:hover,
+#socmed-3 img:hover,
+#socmed-4 img:hover,
+#socmed-5 img:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-10px) scale(1.2);
+}
+
+.downloadcv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px;
+}
+
+.downloadcv p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.icondownloadcv {
+    display: flex;
+    align-items: center;
+}
+
+.icondownloadcv img {
+    width: 30px;
+    height: auto;
+}
+
+.downloadcv a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.title-socialmedia{
+    padding-bottom: 10px;
+}

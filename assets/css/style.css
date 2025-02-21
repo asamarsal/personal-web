@@ -35,12 +35,12 @@
     }
 
     #technologies {
-        flex-direction: column;
+        flex-direction: column !important;
         gap: 30px;
     }
 
     #javascript {
-        text-align: center;
+        text-align: left;
         padding: 15px;
     }
 
@@ -189,6 +189,16 @@
         margin-top: 30px;
         text-align: center;
     }
+
+    .title-socialmedia{
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    .what-i-do{
+        padding-left: 14px;
+        padding-right: 14px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -237,6 +247,21 @@
         padding: 10px auto;
         margin-top: 30px;
         text-align: center;
+    }
+
+    .title-socialmedia{
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    #technologies {
+        flex-direction: column !important;
+        gap: 30px;
+    }
+
+    #javascript {
+        text-align: left;
+        padding: 15px;
     }
 
 }
@@ -582,9 +607,9 @@ nav a {
 
 .downloadcv {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 10px;
-    padding: 16px;
+    padding: 16px 0px 16px 0px;
 }
 
 .downloadcv p {
@@ -598,7 +623,7 @@ nav a {
 }
 
 .icondownloadcv img {
-    width: 30px;
+    width: 25px;
     height: auto;
 }
 
@@ -610,4 +635,20 @@ nav a {
 
 .title-socialmedia{
     padding-bottom: 10px;
+}
+
+#technologies {
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+#javascript {
+    text-align: left;
+    padding: 15px;
+    flex: 1;
+}
+
+.socialmedias{
+    padding: 10px;
 }

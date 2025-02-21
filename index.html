@@ -15,13 +15,13 @@
             <div class="main-menu">
                 <ul class="navbar-links">
                     <img src="assets/img/dumbwayslogo.png" alt="logo" class="logo" width="40px">
-                    <li>
+                    <li id="text-home">
                         <a href="index.html" class="menu-active">Home</a>
                     </li>
-                    <li>
+                    <li id="text-blog">
                         <a href="blog.html">Blog</a>
                     </li>
-                    <li>
+                    <li id="text-testimonials">
                         <a href="testimonials.html">Testimonials</a>
                     </li>
                 </ul>
@@ -82,29 +82,37 @@
                 <section class="introduction" id="introduction">
                     <div class="what-i-do">
                         <h1 class="title">
-                            <span class="typing-text"></span>
+                            <span class="text-introduction"></span>
                         </h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nobis soluta non dolorem illo vel alias quidem quae voluptates architecto, adipisci consequatur eveniet eius similique deserunt assumenda quod modi reprehenderit.</p>
+                        <p>Hello guys, my name is Asa Marsal. I learn about full stack web development a lot with dumbways. I really enjoy to watch and learn about web development with Handlebar JS, Express JS and Postgre SQL. I feel really excited to be a fullstack web developer soon. Thanks for read this introduction.</p>
                     </div>
                     <div id="technologies">
                         <div id="javascript">
                             <img src="assets/img/icon/icon_flutter.png" alt="flutter" width="60px">
-                            <h2 class="title">Frontend Developer</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nobis soluta non dolorem illo vel alias quidem quae voluptates architecto, adipisci consequatur eveniet eius similique deserunt assumenda quod modi reprehenderit.</p>
+                            <h2 class="title">
+                                <span class="text-frontend"></span>
+                            </h2>
+                            <p>Back in the day, i was an Android developer that learn and use flutter and java for android development. But, i take a step to learn fullstack web development to become a webdev.</p>
                         </div>
                         <div id="javascript">
                             <img src="assets/img/icon/icon_gitlab.png" alt="gitlab" width="60px">
-                            <h2 class="title">Version Control Tools</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nobis soluta non dolorem illo vel alias quidem quae voluptates architecto, adipisci consequatur eveniet eius similique deserunt assumenda quod modi reprehenderit.</p>
+                            <h2 class="title">
+                                <span class="text-versioncontrol"></span>
+                            </h2>
+                        <p>When in work, i was using github and gitlab for version control with my team. You can check my github and make a friend with me. Feel free to connect and work together.</p>
                         </div>
                         <div id="javascript">
                             <img src="assets/img/icon/icon_docker.png" alt="docker" width="60px">
-                            <h2 class="title">Automated Deployment</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nobis soluta non dolorem illo vel alias quidem quae voluptates architecto, adipisci consequatur eveniet eius similique deserunt assumenda quod modi reprehenderit.</p>
+                            <h2 class="title">
+                                <span class="text-automateddeployment"></span>
+                            </h2>
+                        <p>I was using firebase for deploy my mobile apps before. But now, i learn to use vercel and netlify to deploy website. Automated deployment help me a lot to publish my website.</p>
                         </div>
                     </div>
                     <div class="socialmedias">
-                        <h2 class="title-socialmedia">Social Media</h2>
+                        <h2 class="title-socialmedia">
+                            <span class="text-socialmedia"></span>
+                        </h2>
                         <div id="socialmediaicon">
                             <a id="socmed-1" href="https://linkedin.com/in/asamarsal" target="_blank">
                                 <img src="assets/img/icon/icon_linkedin.png" alt="linkedin" width="40px">
@@ -133,10 +141,43 @@
 </html>
 
 <script>
-    let typed = new Typed(".typing-text", {
-        strings: ["Introduction"],
+    let typed = new Typed(".text-introduction", {
+            strings: ["Introduction"],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true
+        }
+    );
+
+    let typed2 = new Typed(".text-frontend", {
+        strings: ["Frontend Developer"],
         typeSpeed: 60,
         backSpeed: 40,
-        loop: true
+        loop: false,
+        showCursor: false
+    });
+
+    let typed3 = new Typed(".text-versioncontrol", {
+        strings: ["Version Control Tools"],
+        typeSpeed: 60,
+        backSpeed: 40,
+        loop: false,
+        showCursor: false
+    });
+
+    let typed4 = new Typed(".text-automateddeployment", {
+        strings: ["Automated Deployment"],
+        typeSpeed: 60,
+        backSpeed: 40,
+        loop: false,
+        showCursor: false
+    });
+
+    let typed5 = new Typed(".text-socialmedia", {
+        strings: ["Social Media"],
+        typeSpeed: 60,
+        backSpeed: 40,
+        loop: false,
+        showCursor: false
     });
 </script>

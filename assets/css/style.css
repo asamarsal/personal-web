@@ -706,3 +706,19 @@ nav a {
 .bg-purple {
     background-color: rebeccapurple !important;
 }
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#javascript img {
+    animation: float 3s ease-in-out infinite;
+}

@@ -1,34 +1,27 @@
 const express = require("express");
-const exphbs = require("express-handlebars");
-const path = require("path");
-
 const app = express();
 const port = 3000;
 
-// Setup Handlebars
-app.engine("handlebars", exphbs.engine({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.set('view engine', 'hbs');
 
-// Setup folder public untuk assets
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static('assets'));
 
-// Route ke halaman utama
-app.get("/", (req, res) => {
-  res.render("home", {
-    name: "Asa Marsal",
-    experience: [
-      { title: "Develop Personal Website", year: "2025" },
-    ],
-    skills: [
-      { title: "Frontend Developer", icon: "js.png", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit." },
-      { title: "Version Control", icon: "github.png", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit." },
-      { title: "Automated Deployment", icon: "deploy.png", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit." },
-    ],
-    socialMedia: ["facebook", "twitter", "instagram", "email", "whatsapp"]
-  });
+app.get('/', (req, res) => {
+  res.render('index');
 });
 
-// Jalankan server
+app.get('/blog', (req, res) => {
+  res.render('blog');
+});
+
+app.get('/testimonials', (req, res) => {
+  res.render('testimonials');
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });

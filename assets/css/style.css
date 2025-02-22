@@ -289,16 +289,40 @@ body {
     margin: 0;
 }
 
-.active {
+.active-on {
     user-select: none;
     border-radius: 10px;
     transition: all 0.1s ease;
     box-shadow: 0 0 5px #fe4e30;
 }
 
-.active:hover {
+.active-on:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 10px #fe4e30;
+}
+
+.active {
+    user-select: none;
+    transition: all 0.1s ease;
+    font-weight: bold !important;
+    color:#fe4e30 !important;
+}
+
+.active:hover {
+    transform: translateY(-2px);
+}
+
+.effecthover {
+    user-select: none;
+    transition: all 0.1s ease;
+}
+
+.effecthover:hover {
+    transform: translateY(-2px);
+}
+
+.others-text{
+    color: white !important;
 }
 
 .title{
@@ -658,4 +682,27 @@ nav a {
 
 .socialmedias{
     padding: 10px;
+}
+
+.intro-my-name{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ebebeb;
+}
+
+.btn-orangered{
+    background-color: orangered !important;
+    color: white !important;
+    transition: all 0.1s ease;
+    box-shadow: 0 0 5px #fe4e30;
+    border-radius: 10px;
+}
+
+.btn-orangered:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px #fe4e30;
+}
+
+.bg-purple {
+    background-color: rebeccapurple !important;
 }

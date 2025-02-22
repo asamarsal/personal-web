@@ -10,34 +10,30 @@
     </head>
 
     <body>
-        <nav>
-            <div class="main-menu">
-                <ul class="navbar-links">
-                    <img src="assets/img/dumbwayslogo.png" alt="logo" class="logo" width="40px">
-                    <li id="text-home">
-                        <a href="index.html">Home</a>
+        <nav class="navbar navbar-expand-lg bg-purple">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/dumbwayslogo.png" alt="logo_dumbways" width="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link effecthover others-text" aria-current="page" href="index.html">Home</a>
                     </li>
-                    <li id="text-blog">
-                        <a href="blog.html">Blog</a>
+                    <li class="nav-item">
+                        <a class="nav-link effecthover others-text" href="blog.html">Blog</a>
                     </li>
-                    <li id="text-testimonials">
-                        <a href="testimonials.html">Testimonials</a>
+                    <li class="nav-item">
+                        <a class="nav-link effecthover others-text" href="testimonials.html">Testimonials</a>
                     </li>
-                </ul>
-                <a class="nav-contact-button active" href="contact.html">Contact Me</a>    
-            </div>
-
-            <div class="mobile-menu">
-                <img src="assets/img/dumbwayslogo.png" alt="logo" class="logo" width="40px">
-                <button id="hamburger-button" class="hamburger-button">≡</button>
+                    </ul>
+                    <a class="btn btn-orangered" href="contact.html">Contact Me</a>
+                </div>
             </div>
         </nav>
-        <div id="mobile-menu-list" class="mobile-menu-list mobile-menu-hide">
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="contact.html" class="menu-active">Contact Me</a>
-        </div>
 
         <h1 class="title-getintouch">Get in touch</h1>
 
@@ -68,7 +64,7 @@
             </div>
             <div class="form-field">
                 <div class="button-container">
-                  <button class="active" type="submit">Submit</button>
+                  <button class="active-on" type="submit">Submit</button>
                 </div>
             </div>
         </form>

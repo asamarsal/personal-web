@@ -12,8 +12,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static('assets'));
 app.use(express.static(path.join(__dirname, "assets")));
+app.use(express.static(path.join(__dirname, "public")));
 
 hbs.registerPartials(__dirname + "/views/partials", function (err) {});
 

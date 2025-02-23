@@ -4,6 +4,12 @@
         overflow-x: hidden;
     }
 
+    .profile-card {
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
     nav {
         flex-direction: column;
         padding: 0px;
@@ -203,7 +209,7 @@
 
 @media screen and (max-width: 480px) {
     .profile-card {
-        width: 80%;
+        width: 90%;
         margin: 10px auto;
         padding: 10px;
     }

@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const hbs = require('hbs');
 const path = require('path');
+const methodOverride = require('method-override');
+
+const{renderBlog, renderBlogDetail, renderBlogEdit, createBlog, updateBlog, deleteBlog,} = require('./controllers/controller-v1');
+
 const port = 3000;
 
 const {formatDateToWIB, getRelativeTime} = require('./utils/time');
@@ -15,9 +19,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "assets")));
 app.use(express.static(path.join(__dirname, "public")));
 
-hbs.registerPartials(__dirname + "/views/partials", function (err) {});
+app.use(methodOverride("_method"));
 
-let blogs = [];
+hbs.registerPartials(__dirname + "/views/partials", function (err) {});
 
 hbs.registerHelper("equal", function (a, b) {
   return a === b;
@@ -27,49 +31,43 @@ hbs.registerHelper("formatDateToWIB", formatDateToWIB)
 hbs.registerHelper("getRelativeTime", getRelativeTime)
 
 //-----------------------------------------------------//
+
+//Index
 app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/blog', (req, res) => {
-  console.log(blogs);
-  res.render('blog-list', {blogs: blogs});
+//Blog List
+app.get('/blog', renderBlog);
 
-});
-
+//Blog Create
 app.get('/blog-create', (req, res) => {
   res.render('blog-create');
 });
 
-app.post('/blog-create', (req, res) => {
-  const { title, content } = req.body;
+app.post('/blog-create', createBlog);
 
-  let image = "https://picsum.photos/200/300";
+//Blog Edit
+app.get('/blog-edit/:id', renderBlogEdit);
 
-  let newBlog = {
-    title: title,
-    content: content,
-    image: "https://picsum.photos/200/300",
-    author: "Asa Marsal",
-    postedAt: new Date(),
-  };
+//Blog Save
+app.patch('/blog-update/:id', updateBlog);
 
-  blogs.push(newBlog);
-
-  res.redirect('/blog');
-});
-
+//Testimonials
 app.get('/testimonials', (req, res) => {
   res.render('testimonials');
 });
 
+//Contact
 app.get('/contact', (req, res) => {
   res.render('contact');
 });
 
-app.get('/blog-detail', (req, res) => {
-  res.render('blog-detail');
-});
+//Delete Existing Blog
+app.delete('/blog/:id', deleteBlog);
+
+//Blog Detail
+app.get('/blog/:id', renderBlogDetail);
 
 //-----------------------------------------------------//
 

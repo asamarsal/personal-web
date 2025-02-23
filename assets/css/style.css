@@ -328,6 +328,7 @@ body {
 
 .active:hover {
     transform: translateY(-2px);
+    /* transform: scale(1.2); */
 }
 
 .effecthover {
@@ -341,6 +342,10 @@ body {
 
 .others-text{
     color: white !important;
+}
+
+.others-text:hover{
+    /* transform: scale(1.2); */
 }
 
 .title{

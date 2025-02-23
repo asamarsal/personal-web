@@ -1,15 +1,14 @@
 {{#> layout currentPage='Blog'}}
 
     <article class="blog-detail">
-        <h1>Belajar bermain game online</h1>
+        <h1>{{blog.title}}</h1>
 
         <p>1 Jan 2025 12:34 WIB | Ujang Spakbor</p>
 
-        <img src="/img/blog-img1.jpg" alt="blog-image">
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Repudiandae, dolorum.
+        <img src="{{blog.image}}" alt="blog-image" style="height: 400px;">
+        <p class="mt-2">
+            {{blog.content}}
         </p>
-        </article>
+    </article>
 
 {{/layout}}

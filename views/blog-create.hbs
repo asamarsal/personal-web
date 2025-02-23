@@ -1,0 +1,27 @@
+{{#> layout currentPage='Create-Blog'}}
+
+    <form id="create-blog" class="create-blog-form" method="post" action="/blog-create">
+      <h1>Create Blog</h1>
+
+      <div class="input-group mb-3 mt-3">
+        <input name="title" id="title" type="text" placeholder="Title" class="form-control" aria-label="Sizing example input" aria-describedby="title" required>
+      </div>
+
+      <div class="input-group mb-3">
+        <textarea name="content" id="content" placeholder="Content" class="form-control" aria-label="content" rows="6" required></textarea>
+      </div>
+
+      <div class="input-group mb-3">
+        <input name="image" type="file" class="form-control" id="image">
+        <label class="input-group-text" for="image">Upload</label>
+      </div>
+
+      <div class="form-field">
+        <div class="button-container">
+          <button class="active-on" type="submit">Submit</button>
+        </div>
+      </div>
+
+    </form>
+
+{{/layout}}

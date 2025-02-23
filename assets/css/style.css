@@ -301,6 +301,18 @@ body {
     box-shadow: 0 0 10px #fe4e30;
 }
 
+.active-ontwo {
+    user-select: none;
+    border-radius: 10px;
+    transition: all 0.1s ease;
+    box-shadow: 0 0 10px white;
+}
+
+.active-ontwo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px white;
+}
+
 .active {
     user-select: none;
     transition: all 0.1s ease;
@@ -536,6 +548,7 @@ nav a {
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    text-decoration: none;
   }
   
   .blog-item-relative-time {
@@ -640,7 +653,7 @@ nav a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 16px 0px 16px 0px;
+    padding: 4px 0px 10px 0px;
 }
 
 .downloadcv p {

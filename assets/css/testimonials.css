@@ -132,6 +132,6 @@
 }
 
 .active-two:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     box-shadow: 0 0 10px orange;
 }

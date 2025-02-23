@@ -9,13 +9,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link 
+                        {{#if (equal currentPage 'Home')}}
+                            active fw-bold 
+                            {{else}} 
+                            effecthover others-text
+                        {{/if}} " aria-current="page" href="/">
+                            Home
+                        </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link effecthover others-text" href="/blog">Blog</a>
+                    <a class="nav-link 
+                        {{#if (equal currentPage 'Blog')}}
+                            active fw-bold
+                            {{else}} 
+                            effecthover others-text
+                        {{/if}} " href="/blog">
+                            Blog
+                        </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link effecthover others-text" href="/testimonials">Testimonials</a>
+                    <a class="nav-link
+                        {{#if (equal currentPage 'Testimonials')}}
+                            active fw-bold
+                            {{else}} 
+                            effecthover others-text
+                        {{/if}} " href="/testimonials">
+                            Testimonials
+                        </a>
                 </li>
             </ul>
             <a class="btn btn-orangered" href="/contact">Contact Me</a>

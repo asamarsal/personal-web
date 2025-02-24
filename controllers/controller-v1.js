@@ -1,3 +1,10 @@
+const {Sequelize, QueryTypes} = require("sequelize");
+const config = require("../config/config.json");
+const { INSERT } = require("sequelize/lib/query-types");
+const { query } = require("express");
+
+const sequelize = new Sequelize(config.development);
+
 let blogs = [
     {
       title: "Title 1",
@@ -19,63 +26,101 @@ let blogs = [
     }
   ];
 
-function renderBlog(req, res) {
+async function renderBlog(req, res) {
+    const blogs = await sequelize.query('SELECT * FROM public."Blogs" ORDER BY "createdAt" DESC', {
+        type: QueryTypes.SELECT,
+    });
     console.log(blogs);
     res.render('blog-list', {blogs: blogs});
 }
 
-function renderBlogDetail(req, res) {
+async function renderBlogDetail(req, res) {
     const id = req.params.id;
-    res.render('blog-detail', { blog: blogs[id] });
+
+    const query = `SELECT * FROM "Blogs" WHERE id = ${id}`;
+    const blogYangDipilih = await sequelize.query(query, {
+        type: QueryTypes.SELECT,
+    });
+
+    res.render('blog-detail', { blog: blogYangDipilih[0]});
 }
 
-function createBlog(req, res) {
+async function createBlog(req, res) {
     const { title, content } = req.body;
 
     let image = "https://picsum.photos/200/300";
 
-    let newBlog = {
-        title: title,
-        content: content,
-        image: "https://picsum.photos/200/300",
-        author: "Asa Marsal",
-        postedAt: new Date(),
-    };
+    let query = `INSERT INTO "Blogs" (title, content, image) VALUES ('${title}', '${content}', '${image}')`;
 
-    blogs.push(newBlog);
+    const newBlog = await sequelize.query(query, {
+        type: QueryTypes.INSERT,
+    });
+
+    // let newBlog = {
+    //     title: title,
+    //     content: content,
+    //     image: "https://picsum.photos/200/300",
+    //     author: "Asa Marsal",
+    //     postedAt: new Date(),
+    // };
+
+    // blogs.push(newBlog);
 
     res.redirect('/blog');
 }
 
-function renderBlogEdit(req, res) {
+async function renderBlogEdit(req, res) {
     const id = req.params.id;
 
-    res.render('blog-edit', { blog: blogs[id], index: id });
+    const query = `SELECT * FROM "Blogs" WHERE id = ${id}`;
+    const blogYangDipilih = await sequelize.query(query, {
+        type: QueryTypes.SELECT,
+    });
+
+    res.render('blog-edit', { blog: blogYangDipilih[0]});
 }
 
-function updateBlog(req, res) {
+async function updateBlog(req, res) {
+    const id = req.params.id;
     const { title, content } = req.body;
-    const id = req.params.id;
 
-    let image = "https://picsum.photos/200/300";
+    const query = `UPDATE "Blogs" SET title = '${title}', content = '${content}' WHERE id = ${id}`;
 
-    let updatedBlog = {
-        title: title,
-        content: content,
-        image: "https://picsum.photos/200/300",
-        author: "Sumanto",
-        postedAt: new Date(),
-    };
+    const updateResult = await sequelize.query(query, {
+        type: QueryTypes.UPDATE,
+    });
 
-    blogs[id] = updatedBlog;
+    console.log("Hasil :", updateResult);
+
+    //------------------------------------------------
+    // let image = "https://picsum.photos/200/300";
+
+    // let updatedBlog = {
+    //     title: title,
+    //     content: content,
+    //     image: "https://picsum.photos/200/300",
+    //     author: "Sumanto",
+    //     postedAt: new Date(),
+    // };
+
+    // blogs[id] = updatedBlog;
+
+    //------------------------------------------------
 
     res.redirect('/blog');
 }
 
-function deleteBlog(req, res) {
+async function deleteBlog(req, res) {
     const id = req.params.id;
+    const query = `DELETE FROM "Blogs" WHERE id = ${id}`;
 
-    blogs.splice(id, 1);
+    const deleteResult = await sequelize.query(query, {
+        type: QueryTypes.DELETE,
+    });
+
+    console.log("Hasil :", deleteResult);
+
+    // blogs.splice(id, 1);
 
     res.redirect('/blog');
 }

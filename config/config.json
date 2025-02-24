@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "uuaauaua123",
+    "database": "asa_personalweb",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "uuaauaua123",
+    "database": "asa_personalweb",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "uuaauaua123",
+    "database": "asa_personalweb",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  }
+}

@@ -1,0 +1,49 @@
+body { 
+  background-color: #ffffff; 
+  color: #fff;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+p {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 100;
+  margin: 0;
+  color: #000000;
+  user-select: none;
+}
+
+h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15em;
+  font-weight: 100;
+  color: #000000;
+  text-shadow: 
+    #ffffff 1px 1px,
+    #e0e0e0 2px 2px,
+    #d5d5d5 3px 3px,
+    #cccccc 4px 4px,
+    #c8c8c8 5px 5px,
+    #c2c2c2 6px 6px,
+    #bbbbbb 7px 7px,
+    #b8b8b8 8px 8px,
+    #b5b5b5 9px 9px,
+    #b0b0b0 10px 10px;
+    user-select: none;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 10em;
+  }
+}

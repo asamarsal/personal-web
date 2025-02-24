@@ -1,6 +1,6 @@
 {{#> layout currentPage='Edit-Blog'}}
 
-    <form id="create-blog" class="create-blog-form" method="post" action="/blog-update/{{index}}?_method=PATCH">
+    <form id="create-blog" class="create-blog-form" method="POST" action="/blog-update/{{blog.id}}?_method=PATCH">
       <h1>Edit Blog</h1>
 
       <div class="input-group mb-3 mt-3">
@@ -20,7 +20,7 @@
 
       <div class="form-field">
         <div class="button-container">
-          <button class="active-on" type="submit">Submit</button>
+          <button class="active-on" type="submit">Save</button>
         </div>
       </div>
 

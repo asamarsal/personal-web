@@ -9,29 +9,30 @@
     <section id="blogList" class="blog-list">
         
         {{#each blogs}}
-            <article class="blog-item">
+        <article class="blog-item">
             <div class="blog-item-img">
                 <img src={{this.image}} alt="Blog Image">
             </div>
             <div class="blog-item-text">
                 <div>
                     <div class="blog-item-buttons">
-                        <a href="/blog-edit/{{@index}}" style="text-decoration: none;" class="btn btn-primary active-ontwo">Edit Blog</a>
-                        <form style="display: inline;" action="/blog/{{@index}}?_method=DELETE" method="post">
+                        <a href="/blog-edit/{{this.id}}" style="text-decoration: none;" class="btn btn-primary active-ontwo">Edit Blog</a>
+                        <form style="display: inline;" action="/blog/{{this.id}}?_method=DELETE" method="post">
                             <button onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger active-ontwo" type="submit">Delete Blog</button>
                         </form>
                     </div>
-                    <a href="blog/{{@index}}" style="text-decoration: none">
+                    <a href="blog/{{this.id}}" style="text-decoration: none">
                         <h1 class="blog-item-title">
                             {{this.title}}
                         </h1>
                     </a>
-                    <p>{{formatDateToWIB this.postedAt}} | {{this.author}}</p>
+                    <p>{{formatDateToWIB this.createdAt}} | Owsla Skrillex</p>
+                    <p>Last Edit : {{formatDateToWIB this.updatedAt}}</p>
                     <p>
                         {{this.content}}
                     </p>
                 </div>
-                <p class="blog-item-relative-time">{{getRelativeTime this.postedAt}}</p>
+                <p class="blog-item-relative-time">{{getRelativeTime this.createdAt}}</p>
             </div>
         </article>
         {{/each}}

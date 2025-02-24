@@ -39,6 +39,16 @@
                         </a>
                 </li>
             </ul>
+
+            <div>
+                {{#if user}}
+                <span class="me-3 warna-putih">
+                    Hello, {{user.name}}
+                </span>
+                <a class="warna-biru" href="/login">Logout</a>
+                {{/if}}
+            </div>
+
             <a class="btn btn-orangered" href="/contact">Contact Me</a>
         </div>
     </div>

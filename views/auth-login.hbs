@@ -1,0 +1,38 @@
+{{#> layout currentPage='Login'}}
+
+    <form id="login-form" class="create-blog-form" method="post" action="/login">
+      <h1 style="text-align: start;">Let's get started! <br>Sign in below.</h1>
+
+      <div style="text-align: center;">
+        <img src="/gif/login-animation.gif" alt="Login Animation" style="width: 200px; height: auto;">
+      </div>
+
+      <div class="input-group mb-3 mt-3">
+        <input name="email" id="email" type="email" placeholder="Email" class="form-control" aria-label="Sizing example input" aria-describedby="title" required>
+      </div>
+
+      <div class="input-group mb-3 mt-3">
+        <input name="password" id="password" type="password" placeholder="Password" class="form-control" aria-label="Sizing example input" aria-describedby="title" required>
+      </div>
+
+      {{#if messages.error}}
+        <div class="alert alert-danger" role="alert">
+            {{messages.error}}
+        </div>
+      {{/if}}
+
+      {{#if messages.success}}
+        <div class="alert alert-success" role="alert">
+            {{messages.success}}
+        </div>
+      {{/if}}
+
+      <div class="form-field">
+        <div class="button-container">
+          <button class="active-on" type="submit">Login</button>
+        </div>
+      </div>
+
+    </form>
+
+{{/layout}}

@@ -1,7 +1,11 @@
 {{#> layout currentPage='Register'}}
 
     <form id="register-form" class="create-blog-form" method="post" action="/register">
-      <h1 style="padding-bottom: 20px;">Register</h1>
+      <h1>Register</h1>
+
+      <div style="text-align: center;">
+        <img src="/gif/register-animation.gif" alt="Login Animation" style="width: 200px; height: auto;">
+      </div>
 
       <div class="input-group mb-3 mt-3">
         <input name="name" id="name" type="text" placeholder="Name" class="form-control" aria-label="Sizing example input" aria-describedby="title" required>
@@ -15,7 +19,7 @@
         <input name="password" id="password" type="password" placeholder="Password" class="form-control" aria-label="Sizing example input" aria-describedby="title" required>
       </div>
 
-      <div class="input-group mb-3 mt-3">
+      <div class="input-group mt-3">
         <input name="confirmPassword" id="confirmPassword" type="password" placeholder="Confirm Password" class="form-control" aria-label="Sizing example input" aria-describedby="title" required>
       </div>
 

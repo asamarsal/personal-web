@@ -89,7 +89,8 @@ app.patch('/blog-update/:id', updateBlog);
 
 //Testimonials
 app.get('/testimonials', (req, res) => {
-  res.render('testimonials');
+  const user = req.session.user;
+  res.render('testimonials', { user: user });
 });
 
 //Contact

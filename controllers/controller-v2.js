@@ -90,13 +90,20 @@ async function authLogout(req, res) {
 }
 
 async function renderBlog(req, res) {
+    const user = req.session.user;
+
     const blogs = await Blog.findAll(
         {
             order: [["createdAt", "DESC"]],
         }
     );
     console.log(blogs);
-    res.render('blog-list', {blogs: blogs});
+
+    if(user) {
+        res.render('blog-list', {blogs: blogs, user: user});
+    } else {
+        res.render('blog-list', {blogs: blogs});
+    }
 }
 
 async function renderBlogDetail(req, res) {
@@ -139,6 +146,16 @@ async function deleteBlog(req, res) {
 
 async function renderBlogCreate(req, res) {
     //Render Halaman Create Blog
+
+    const user = req.session.user;
+
+    if(user) {
+        res.render('blog-create');
+    } else {
+        res.redirect('/login');
+    }
+
+
     res.render('blog-create');
 }
 

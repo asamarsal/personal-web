@@ -1,9 +1,11 @@
 {{#> layout currentPage='Blog'}}
 
 <h1 style="text-align: center; margin-top: 20px;">My Blog</h1>
+{{#if user}}
 <div style="width: 90%; margin: 10px auto; text-align: right;">
   <a href="/blog-create" class="blog-post-button active-on">Create</a>
 </div>
+{{/if}}
 
 <main>
     <section id="blogList" class="blog-list">

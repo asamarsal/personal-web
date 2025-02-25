@@ -12,6 +12,35 @@ async function renderHome(req, res) {
     res.render('index', {user: user});
 }
 
+async function renderContact(req, res) {
+    res.render('contact');
+}
+
+async function renderTestimonials(req, res) {
+    res.render('testimonials');
+}
+
+async function renderLogin(req, res) {
+    const user = req.session.user;
+
+    if(user) {
+        req.flash("warning", "Anda sudah login!");
+        res.redirect("/");
+    } else {
+        res.render('auth-login', {user: user});
+    }
+}
+
+async function renderRegister(req, res) {
+    const user = req.session.user;
+
+    if(user) {
+        return res.redirect("/");
+    } else {
+        res.render('auth-register', {user: user});
+    }
+}
+
 async function authLogin(req, res) {
     const { email, password } = req.body;
     console.log("emailnya: ",email, "passwordnya: ", password);
@@ -107,6 +136,8 @@ async function renderBlog(req, res) {
 }
 
 async function renderBlogDetail(req, res) {
+    const user = req.session.user;
+
     const id = req.params.id;
     try {
 
@@ -120,7 +151,7 @@ async function renderBlogDetail(req, res) {
         if(blogYangDipilih === null) {
             res.render('page-404');
         } else {
-            res.render('blog-detail', {blog: blogYangDipilih});
+            res.render('blog-detail', {blog: blogYangDipilih, user: user});
         }
         // ================
 
@@ -179,6 +210,8 @@ async function createBlog(req, res) {
 async function renderBlogEdit(req , res) {
     const {id} = req.params;
 
+    const user = req.session.user;
+
     const blogYangDipilih = await Blog.findOne({
         where: {
             id: id,
@@ -188,7 +221,7 @@ async function renderBlogEdit(req , res) {
     if(blogYangDipilih === null) {
         res.render('page-404');
     } else {
-        res.render('blog-edit', {blog: blogYangDipilih});
+        res.render('blog-edit', {blog: blogYangDipilih, user: user});
     }
     //Render Halaman Edit Blog
 }
@@ -215,7 +248,16 @@ async function updateBlog(req , res) {
     //Update Blog
 }
 
+async function renderError(req, res) {
+    res.render('page-404');
+}
+
 module.exports = {
+    renderLogin,
+    renderRegister,
+    renderContact,
+    renderTestimonials,
+    renderError,
     renderHome,
     authLogin,
     authLogout,

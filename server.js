@@ -8,6 +8,11 @@ const session = require('express-session');
 
 // const{renderBlogEdit, updateBlog,} = require('./controllers/controller-v1');
 const{renderHome,
+      renderLogin,
+      renderRegister,
+      renderContact,
+      renderTestimonials,
+      renderError,
       authLogin,
       authLogout,
       authRegister, 
@@ -57,17 +62,11 @@ hbs.registerHelper("getRelativeTime", getRelativeTime)
 //Index
 app.get('/', renderHome);
 
+app.get('/login', renderLogin);
 
+app.get('/register', renderRegister);
 
-app.get('/login', (req, res) => {
-  res.render('auth-login');
-});
-
-app.get('/register', (req, res) => {
-  res.render('auth-register');
-});
-
-app.get("/logout"), authLogout;
+app.get("/logout", authLogout);
 
 app.post('/login', authLogin);
 
@@ -88,15 +87,10 @@ app.get('/blog-edit/:id', renderBlogEdit);
 app.patch('/blog-update/:id', updateBlog);
 
 //Testimonials
-app.get('/testimonials', (req, res) => {
-  const user = req.session.user;
-  res.render('testimonials', { user: user });
-});
+app.get('/testimonials', renderTestimonials);
 
 //Contact
-app.get('/contact', (req, res) => {
-  res.render('contact');
-});
+app.get('/contact', renderContact);
 
 //Delete Existing Blog
 app.delete('/blog/:id', deleteBlog);
@@ -104,11 +98,7 @@ app.delete('/blog/:id', deleteBlog);
 //Blog Detail
 app.get('/blog/:id', renderBlogDetail);
 
-app.get("*", (req, res)=>
-  {
-    res.status(404).render('page-404');
-  }
-)
+app.get("*", renderError);
 
 //-----------------------------------------------------//
 

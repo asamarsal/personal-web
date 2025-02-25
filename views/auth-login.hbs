@@ -27,6 +27,12 @@
         </div>
       {{/if}}
 
+      {{#if messages.warning}}
+        <div class="alert alert-warning" role="alert">
+            {{messages.warning}}
+        </div>
+      {{/if}}
+
       <div class="form-field">
         <div class="button-container">
           <button class="active-on" type="submit">Login</button>

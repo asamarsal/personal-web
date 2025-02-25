@@ -353,9 +353,9 @@ body {
     color: white !important;
 }
 
-.others-text:hover{
-    /* transform: scale(1.2); */
-}
+/* .others-text:hover{
+    transform: scale(1.2);
+} */
 
 .title{
     user-select: none;
@@ -387,9 +387,6 @@ body {
     text-decoration: none;
 }
 
-nav {
-    
-}
 
 .mobile-menu {
     display: none;

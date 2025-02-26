@@ -4,11 +4,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "build": "npm install"
-  },
-  "engines": {
-    "node": ">=14.0.0"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "Asa Marsal",

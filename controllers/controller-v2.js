@@ -3,10 +3,10 @@ const bcrypt = require("bcrypt");
 const config = require("../config/config.js");
 const {Blog, User} = require("../models");
 const flash = require("express-flash");
-
+require("dotenv").config();
 // const { updateBlog } = require("./controller-v1");
 
-const sequelize = new Sequelize(config.development);
+const sequelize = new Sequelize(config[process.env.NODE_ENV]);
 
 async function renderHome(req, res) {
     const user = req.session.user;

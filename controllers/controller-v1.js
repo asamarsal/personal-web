@@ -3,7 +3,9 @@ const config = require("../config/config.js");
 const { INSERT } = require("sequelize/lib/query-types");
 const { query } = require("express");
 
-const sequelize = new Sequelize(config.development);
+require("dotenv").config();
+
+const sequelize = new Sequelize(config[process.env.NODE_ENV]);
 
 let blogs = [
     {

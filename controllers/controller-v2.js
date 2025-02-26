@@ -2,6 +2,7 @@ const {Sequelize, where} = require("sequelize");
 const bcrypt = require("bcrypt");
 const config = require("../config/config.json");
 const {Blog, User} = require("../models");
+const flash = require("express-flash");
 
 // const { updateBlog } = require("./controller-v1");
 
@@ -13,11 +14,13 @@ async function renderHome(req, res) {
 }
 
 async function renderContact(req, res) {
-    res.render('contact');
+    const user = req.session.user;
+    res.render('contact', {user: user});
 }
 
 async function renderTestimonials(req, res) {
-    res.render('testimonials');
+    const user = req.session.user;
+    res.render('testimonials', {user: user});
 }
 
 async function renderLogin(req, res) {
@@ -123,10 +126,16 @@ async function renderBlog(req, res) {
 
     const blogs = await Blog.findAll(
         {
+            include: {
+                model: User,
+                as: "user",
+                attributes: {exclude: ["password"]},
+            },
             order: [["createdAt", "DESC"]],
-        }
+        },
     );
-    console.log(blogs);
+    // console.log("Paling Atas",blogs);
+    // console.log("blog-list", blogs[0].user);
 
     if(user) {
         res.render('blog-list', {blogs: blogs, user: user});
@@ -177,27 +186,34 @@ async function deleteBlog(req, res) {
 
 async function renderBlogCreate(req, res) {
     //Render Halaman Create Blog
-
     const user = req.session.user;
 
-    if(user) {
-        res.render('blog-create');
-    } else {
-        res.redirect('/login');
-    }
-
-
-    res.render('blog-create');
+    if (user) {
+        return res.render("blog-create", { user: user }); 
+      } else {
+        res.redirect("/login");
+      }
 }
 
 async function createBlog(req, res) {
+
     const { title, content } = req.body;
-    let image = "https://picsum.photos/200/300";
+    const user = req.session.user;
+    let dummyimage = "https://picsum.photos/200/300";
+
+    if(!user) {
+        req.flash("error", "Please login first!");
+        return res.redirect('/login');
+    }
+
+    const image = req.file.path;
+    console.log("image di upload :", image);
 
     const newBlog = {
         title,
         content,
-        image,
+        image: image,
+        authorId: user.id
     }
 
     const resultSubmit = await Blog.create(newBlog);
@@ -217,6 +233,10 @@ async function renderBlogEdit(req , res) {
             id: id,
         },
     });
+
+    if(!user) {
+        return res.redirect('/login');
+    }
     
     if(blogYangDipilih === null) {
         res.render('page-404');
@@ -249,7 +269,8 @@ async function updateBlog(req , res) {
 }
 
 async function renderError(req, res) {
-    res.render('page-404');
+    const user = req.session.user;
+    res.render('page-404', {user: user});
 }
 
 module.exports = {

@@ -16,25 +16,25 @@
                 <img src={{this.image}} alt="Blog Image">
             </div>
             <div class="blog-item-text">
-                <div>
-                    <div class="blog-item-buttons">
-                        <a href="/blog-edit/{{this.id}}" style="text-decoration: none;" class="btn btn-primary active-ontwo">Edit Blog</a>
-                        <form style="display: inline;" action="/blog/{{this.id}}?_method=DELETE" method="post">
-                            <button onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger active-ontwo" type="submit">Delete Blog</button>
-                        </form>
-                    </div>
+                    {{#if (equal ../user.id this.authorId) }}
+                        <div class="blog-item-buttons">
+                            <a href="/blog-edit/{{this.id}}" style="text-decoration: none;" class="btn btn-primary active-ontwo">Edit Blog</a>
+                            <form style="display: inline;" action="/blog/{{this.id}}?_method=DELETE" method="post">
+                                <button onclick="return confirm('Are you sure want to delete?')" class="btn btn-danger active-ontwo" type="submit">Delete Blog</button>
+                            </form>
+                        </div>
+                    {{/if}}
                     <a href="blog/{{this.id}}" style="text-decoration: none">
                         <h1 class="blog-item-title">
                             {{this.title}}
                         </h1>
                     </a>
-                    <p>{{formatDateToWIB this.createdAt}} | Owsla Skrillex</p>
+                    <p>{{formatDateToWIB this.createdAt}} | {{this.user.name}}</p>
                     <p>Last Edit : {{formatDateToWIB this.updatedAt}}</p>
                     <p>
                         {{this.content}}
                     </p>
-                </div>
-                <p class="blog-item-relative-time">{{getRelativeTime this.createdAt}}</p>
+                    <p class="blog-item-relative-time">{{getRelativeTime this.createdAt}}</p>
             </div>
         </article>
         {{/each}}

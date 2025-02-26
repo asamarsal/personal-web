@@ -5,6 +5,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const flash = require('express-flash');
 const session = require('express-session');
+const upload = require('./middlewares/upload-file');
 
 // const{renderBlogEdit, updateBlog,} = require('./controllers/controller-v1');
 const{renderHome,
@@ -27,6 +28,7 @@ const{renderHome,
 const port = 3000;
 
 const {formatDateToWIB, getRelativeTime} = require('./utils/time');
+const checkUser = require("./middlewares/auth");
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
@@ -37,6 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "assets")));
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/uploads", express.static(path.join(__dirname, './uploads')));
 
 app.use(methodOverride("_method"));
 
@@ -76,9 +79,9 @@ app.post('/register', authRegister);
 app.get('/blog', renderBlog);
 
 //Blog Create
-app.get('/blog-create', renderBlogCreate);
+app.get('/blog-create', checkUser, renderBlogCreate);
 
-app.post('/blog-create', createBlog);
+app.post('/blog-create', checkUser, upload.single("image"), createBlog);
 
 //Blog Edit
 app.get('/blog-edit/:id', renderBlogEdit);

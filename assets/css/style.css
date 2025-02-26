@@ -716,8 +716,11 @@ nav a {
 
 .intro-my-name{
     margin-top: 10px;
-    padding-bottom: 10px;
+}
+
+.border-long{
     border-bottom: 2px solid #ebebeb;
+    margin-bottom: 10px;
 }
 
 .btn-orangered{

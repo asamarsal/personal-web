@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const flash = require('express-flash');
 const session = require('express-session');
 const upload = require('./middlewares/upload-file');
+require("dotenv").config();
 
 // const{renderBlogEdit, updateBlog,} = require('./controllers/controller-v1');
 const{renderHome,
@@ -25,7 +26,7 @@ const{renderHome,
       renderBlogEdit, 
       updateBlog,} = require('./controllers/controller-v2');
 
-const port = 3000;
+const port = process.env.SERVER_PORT || 3000;
 
 const {formatDateToWIB, getRelativeTime} = require('./utils/time');
 const checkUser = require("./middlewares/auth");

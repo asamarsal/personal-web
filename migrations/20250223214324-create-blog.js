@@ -10,15 +10,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       authorId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       title: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       image: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       content: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       createdAt: {

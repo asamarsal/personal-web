@@ -28,12 +28,12 @@ function fetchTestimonials() {
     return array
       .map(
         (testimonial) => `
-          <article>
-            <img src="${testimonial.image}" alt="testimonial-image" />
-            <p class="testimonial-item-caption">"${testimonial.caption}"</p>
-            <p style="text-align: right">- ${testimonial.author}</p>
-            <p style="text-align: right; font-weight: bold">${testimonial.rating}★</p>
-          </article>
+          <div id="testimonialsContainer" class="testimonials-list">
+                <div class="testimonials-loading">
+                    <h2 class="testimonials-item-caption">Loading...</h2>
+                    <img src="/gif/bar-loading.gif" alt="youtube" width="300px">
+                </div>
+            </div>
           `
       )
       .join("");
